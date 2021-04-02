@@ -1,4 +1,4 @@
-const { returns } = require("chai-spies")
+//const { returns } = require("chai-spies")
 
 /* Your Code Here */
 function createEmployeeRecord(employeeArry) {
@@ -55,10 +55,11 @@ function findEmployeeByFirstName(srcArry, stringName) {
 
 function calculatePayroll(arry) {
     return arry.reduce((memo, e)=>{
-        return memo += allWagesFor(e)
+        return memo + allWagesFor.call(e)
     },0)
 }
 
+//Below Code was Given
 let allWagesFor = function () {
     let eligibleDates = this.timeInEvents.map(function (e) {
         return e.date
